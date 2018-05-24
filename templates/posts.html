@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title_block %}
+    posts title
+{% endblock %}
+
+{% block new_body %}
+    <div>
+    We want to show our posts here :D
+    </div>
+    {% for key,value in dictionary.items %}
+        <div>
+        {{ key }} : rate --> {{ value.rate }}
+        </div>
+    {% endfor %}
+{% endblock %}

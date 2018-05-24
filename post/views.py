@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from post.models import Post,Author,Tag
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 import jdatetime
 # Create your views here.
 
@@ -26,3 +26,31 @@ def sth(request):
 	return HttpResponse(response,status=200)
 
 def return_static_file(request):
+	posts = Post.objects.filter(author__name='alireza')
+	authors = Author.objects.all()
+	return render(request,'posts.html',{
+		'posts':posts,
+		'authors':authors,
+		'dictionary':{
+			'GOT':{
+				'rate':8.9
+			},
+			'Westworld':{
+				'rate':9
+			},
+			'Breaking Bad':{
+				'rate':7
+			}
+		}
+	})
+
+
+def return_author_file(request):
+	posts = Post.objects.filter(author__name='alireza')
+	authors = Author.objects.all()
+	return render(request,'author.html',{
+		'posts':posts,
+		'authors':authors,
+		'ramadan':'We are starving',
+		'wow':'Wooow'
+	})
