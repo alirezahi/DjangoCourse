@@ -1,1 +1,2 @@
 jdatetime >= 1.0
+djangorestframework

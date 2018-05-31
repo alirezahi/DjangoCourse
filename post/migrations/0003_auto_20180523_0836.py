@@ -22,4 +22,9 @@ class Migration(migrations.Migration):
             name='tags',
             field=models.ManyToManyField(to='post.Tag'),
         ),
+        migrations.AddField(
+            model_name='post',
+            name='tags',
+            field=models.ManyToManyField(to='post.Tag'),
+        ),
     ]

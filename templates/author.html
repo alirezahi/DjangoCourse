@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+{#{% load string %}#}
 
 {% block title_block %}
     author title
@@ -8,4 +9,8 @@
     <div>
     We want to show our authors here :D
     </div>
+    {{ 'we are going to \n train'|linebreaksbr }}
+// start
+{% csrf_token %}
+// end
 {% endblock %}

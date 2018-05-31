@@ -19,13 +19,6 @@ class Author(models.Model):
 class Tag(models.Model):
 	name = models.CharField(max_length=50)
 
-	@property
-	def name_fa(self):
-		return tag_names[self.name]
-
-	def __str__(self):
-		return self.name_fa
-
 
 class Post(models.Model):
 	title = models.CharField(max_length=50)
@@ -39,11 +32,6 @@ class Post(models.Model):
 	class Meta:
 		ordering = ['title']
 
-	def save(self, *args, **kwargs):
-		if self.name == 'alireza':
-			super().save(*args, **kwargs)  # Call the "real" save() method.
-		else:
-			return
 
 
 

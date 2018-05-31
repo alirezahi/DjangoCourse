@@ -1,0 +1,10 @@
+[
+    {
+    "model": "post.author",
+    "pk": 1,
+    "fields": {
+      "name":"Sherlock",
+      "created_date":"2018-00-12:13-03-05"
+    }
+]
+
